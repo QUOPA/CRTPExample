@@ -3,12 +3,12 @@
 #include "CRTPDerived.h"
 
 
-int main()
+void comparePolymorphism()
 {
 	//namespace ns = nopoly;
 	//namespace ns = dynamicpoly;
 	namespace ns = CRTPstaticpoly;
-	
+
 	double dvalue = 3.1;
 
 	ns::DerivedVanila<double> dVanila(dvalue);
@@ -29,7 +29,14 @@ int main()
 	ns::showAnything(nVanila);
 	ns::showAnything(nSqr);
 	ns::showAnything(nDouble);
+}
 
+int main()
+{
+	
+	comparePolymorphism();
 
 	return 0;
 }
+
+

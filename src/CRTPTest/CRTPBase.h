@@ -27,7 +27,7 @@ class BaseTemplate
 {
 public:
 	explicit BaseTemplate(const T& inData) :m_data(inData) {}
-	virtual void showSomething() const { std::cout << "This Is Base Class" << std::endl; } // nothing to show
+	virtual void showSomething() const { std::cout << "This Is Base Class" << std::endl; } 
 
 protected:
 	T m_data;
