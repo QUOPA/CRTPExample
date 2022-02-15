@@ -1,20 +1,25 @@
 
 
-#include "CRTPTest/CRTPDerived.h"
+#include "CRCPandVirtual/CRTPVirtualDerived.h"
 
 
 void comparePolymorphism()
 {
-	//namespace ns = nopoly;
-	namespace ns = dynamicpoly;
-	//namespace ns = CRTPstaticpoly;
+	//namespace ns = crtpvirtual::nopoly;
+	namespace ns = crtpvirtual::dynamicpoly;
+	//namespace ns = crtpvirtual::CRTPstaticpoly;
 
 	std::cout << "Inserted Value : 3.1 (double)" << std::endl;
 	double dvalue = 3.1;
 
-	ns::DerivedVanila<double> dVanila(dvalue);
-	ns::DerivedSquared<double> dSqr(dvalue);
-	ns::DerivedDouble<double> dDouble(dvalue);
+	ns::DerivedSquared<double> tmpdSqr(dvalue);
+	ns::DerivedVanila<double> tmpdVanila(dvalue);
+
+	tmpdVanila.setData(tmpdSqr);
+
+	ns::DerivedVanila<double> dVanila(tmpdVanila.eval());
+	ns::DerivedSquared<double> dSqr(tmpdVanila.eval());
+	ns::DerivedDouble<double> dDouble(tmpdVanila.eval());
 
 	ns::showEvaluation(dVanila);
 	ns::showEvaluation(dSqr);
@@ -34,7 +39,7 @@ void comparePolymorphism()
 
 int main()
 {
-	
+
 	comparePolymorphism();
 
 

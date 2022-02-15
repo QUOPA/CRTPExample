@@ -10,7 +10,7 @@ class BaseTemplate
 {
 public:
 	explicit BaseTemplate(const T& inData) :m_data(inData) {}
-	void showSomething() const { std::cout << "This Is Base Class" << std::endl; } // nothing to show
+	inline T eval() const { return T(); } // nothing to show
 
 protected:
 	T m_data;
@@ -18,7 +18,7 @@ protected:
 
 }
 
-// not working
+
 namespace dynamicpoly
 {
 
@@ -27,7 +27,7 @@ class BaseTemplate
 {
 public:
 	explicit BaseTemplate(const T& inData) :m_data(inData) {}
-	virtual void showSomething() const { std::cout << "This Is Base Class" << std::endl; } 
+	virtual inline T eval() const { return T(); }
 
 protected:
 	T m_data;
@@ -43,12 +43,12 @@ class BaseTemplate
 {
 public:
 	explicit BaseTemplate(const T& inData) :m_data(inData) {}
-	void showSomething() const { derived()->showSomething(); }
+	T eval() const { return derived()->eval(); }
 
 protected:
 	T m_data;
 
-public:
+private:
 	const Derived* derived() const { return static_cast<const Derived*>(this); }
 	Derived* derived() { return static_cast<Derived*>(this); }
 

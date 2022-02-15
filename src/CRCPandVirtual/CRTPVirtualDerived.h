@@ -1,10 +1,10 @@
 #pragma once
 
-#include "CRTPTest/CRTPBase.h"
+#include "CRCPandVirtual/CRTPVirtualBase.h"
 
+namespace crtpvirtual {
 namespace nopoly
 {
-
 	template<typename T>
 	class DerivedVanila : public BaseTemplate<T>
 	{
@@ -29,7 +29,7 @@ namespace nopoly
 	public:
 		explicit DerivedDouble(const T& inData) :BaseTemplate<T>(inData) {}
 
-		inline T eval() const { return 2 * this->m_data;  }
+		inline T eval() const { return 2 * this->m_data; }
 	};
 
 	template <typename T>
@@ -55,7 +55,7 @@ namespace dynamicpoly
 	public:
 		explicit DerivedSquared(const T& inData) :BaseTemplate<T>(inData) {}
 
-		virtual inline T eval() const { return this->m_data * this->m_data; }
+		virtual inline auto eval() const { return this->m_data.eval() * this->m_data.eval(); }
 	};
 
 	template<typename T>
@@ -64,7 +64,7 @@ namespace dynamicpoly
 	public:
 		explicit DerivedDouble(const T& inData) :BaseTemplate<T>(inData) {}
 
-		virtual inline T eval() const { return 2 * this->m_data;  }
+		virtual inline auto eval() const { return 2 * this->m_data.eval(); }
 	};
 
 	template <typename T>
@@ -103,5 +103,6 @@ namespace CRTPstaticpoly
 	};
 
 	template <typename T, typename Derived>
-	inline void showEvaluation(const BaseTemplate<T, Derived>& inobj) { std::cout <<  inobj.eval() <<std::endl; }
-}
+	inline void showEvaluation(const BaseTemplate<T, Derived>& inobj) { std::cout << inobj.eval() << std::endl; }
+
+}}
