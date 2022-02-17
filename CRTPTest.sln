@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CRTPTest", "src\CRTPTest\CRTPTest.vcxproj", "{1C41DA39-C1FC-4F57-A4EE-894822E868D7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CRCPandVirtual", "src\CRCPandVirtual\CRCPandVirtual.vcxproj", "{8C0B9437-E440-45C3-BAF9-9610C57BCA1A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExpressionTemplateTest", "src\ExpressionTemplateTest\CRCPandVirtual.vcxproj", "{8C0B9437-E440-45C3-BAF9-9610C57BCA1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
