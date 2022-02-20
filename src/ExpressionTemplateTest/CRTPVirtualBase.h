@@ -7,7 +7,6 @@ namespace crtpvirtual{
 
 namespace CRTPstaticpoly
 {
-
 	template <typename T>
 	class DerivedVanila;
 

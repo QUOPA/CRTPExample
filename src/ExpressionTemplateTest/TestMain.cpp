@@ -13,21 +13,25 @@ void expressionTemplateTest()
 	ns::DerivedVanila<double> tmpdVanila(dvalue);
 
 	auto dDouble = tmpdVanila.calcDouble();
-	auto dSqrDoubleSqr = tmpdVanila.calcSquare().calcDouble().calcSquare();
-
-	ns::showEvaluation(dSqrDoubleSqr);
 	ns::showEvaluation(dDouble);
 
+	auto dSqrDoubleSqr = tmpdVanila.calcSquare().calcDouble().calcSquare();
+	ns::showEvaluation(dSqrDoubleSqr);
+	
 	std::cout << "Inserted Value : 5 (int)" << std::endl;
 	int nvalue = 5;
-
+	
 	ns::DerivedVanila<int> nVanila(nvalue);
-	auto nSqrDbl = nVanila.calcSquare().calcDouble();
-	auto nDblSqr = nVanila.calcDouble().calcSquare();
-
 	ns::showEvaluation(nVanila);
+	
+	auto nSqrDbl = nVanila.calcSquare().calcDouble();
 	ns::showEvaluation(nSqrDbl);
+	
+	auto nDblSqr = nVanila.calcDouble().calcSquare();
 	ns::showEvaluation(nDblSqr);
+	
+	
+	
 }
 
 int main()

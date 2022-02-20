@@ -6,8 +6,8 @@
 void comparePolymorphism()
 {
 	//namespace ns = nopoly;
-	namespace ns = dynamicpoly;
-	//namespace ns = CRTPstaticpoly;
+	//namespace ns = dynamicpoly;
+	namespace ns = CRTPstaticpoly;
 
 	std::cout << "Inserted Value : 3.1 (double)" << std::endl;
 	double dvalue = 3.1;
